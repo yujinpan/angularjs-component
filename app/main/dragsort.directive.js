@@ -193,7 +193,11 @@ export function dragsort($timeout) {
              * insertBefore在最后一个时需要处理为insertAfter。
              */
             function renderList() {
-                if (changeIndex === scope.data.length - 1) {
+                var length = scope.data.length;
+                // 只有一个时
+                if(length === 1) return;
+                // 移除插入
+                if (changeIndex === length - 1) {
                     targetEle = targetEle.remove().insertAfter(listEle.find('ul>li').eq(changeIndex - 1));
                 } else {
                     targetEle = targetEle.remove().insertBefore(listEle.find('ul>li').eq(changeIndex));

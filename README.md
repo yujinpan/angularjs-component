@@ -2,6 +2,7 @@
 > more components.
 
  - ios btnswitch
+ - dragsort
  - ...
 
 # Start

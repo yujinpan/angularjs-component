@@ -22,7 +22,7 @@ module.exports = (function webpackConfig() {
 
     // 入口文件
     config.entry = {
-        vendor: ['angular', '@uirouter/angularjs'],
+        vendor: ['angular', '@uirouter/angularjs', 'zepto-webpack'],
         app: __dirname + '/app/bootstrap/bootstrap.js'
     };
 

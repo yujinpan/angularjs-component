@@ -1,3 +1,27 @@
+ul,ol,li {
+    list-style-type: none;
+}
 body {
     background: #fff;
+    color: #666;
+}
+
+.transition3s {
+    transition: all .3s;
+    -webkit-transition: all .3s;
+}
+
+app {
+    display: block;
+    overflow: hidden;
+    h4 {
+        &>span {
+            color: #333;
+            font-size: 14px;
+        }
+    }
+}
+.drag-list-example {
+    width: 500px;
+    margin: 0 auto;
 }

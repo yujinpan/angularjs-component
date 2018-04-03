@@ -33,6 +33,8 @@
   "dependencies": {
     "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.9",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "zepto": "^1.2.0",
+    "zepto-webpack": "^1.2.1"
   }
 }

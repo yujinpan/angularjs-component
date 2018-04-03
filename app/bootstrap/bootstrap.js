@@ -7,3 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 // 根模块
 import './ngmodule';
+
+// zepto-webpack,模块化的zepto
+import $ from 'zepto-webpack';
+

@@ -1,0 +1,61 @@
+.drag-list-wrap {
+    position: relative;
+    >ul {
+        display: flex;
+        display: -webkit-flex;
+        flex-wrap: wrap;
+    }
+    .drag-wrap {
+        width: 95px;
+        height: 45px;
+        margin: 0 10px 10px 0;
+        border-radius: 4px;
+        position: relative;
+        border: 1px solid #ddd;
+        cursor: move;
+        line-height: 43px;
+        text-align: center;
+        &.drag-holder {
+            border-style: dashed;
+            font-size: 0;
+            .drag-list-remove {
+                display: none;
+            }
+        }
+        &.drag-active {
+            z-index: 1;
+            position: absolute;
+            background: white;
+            border-color: #bbb;
+            .drag-list-remove {
+                transform: scale(.8);
+                -webkit-transform: scale(.8);
+            }
+        }
+    }
+    .drag-list-remove {
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        border-radius: 50%;
+        background: #ddd;
+        cursor: pointer;
+        &:after {
+            content: '';
+            display: block;
+            width: 6px;
+            height: 6px;
+            margin: 4px;
+            background: #bbb;
+            border-radius: inherit;
+        }
+        &:hover {
+            background: #bbb;
+            &:after {
+                background: #ddd;
+            }
+        }
+    }
+}

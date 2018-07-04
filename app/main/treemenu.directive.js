@@ -5,8 +5,10 @@
  * 1. 在compile阶段获取字符串模板
  * 2. 在link阶段根据子集渲染子集模板
  * 
+ * !!依赖ng-repeat中的item别名，需固定别名
+ * 
  * example: 
- * <treemenu item="item" ng-repeat="item in data">
+ * <treemenu ng-repeat="item in data">
  *     <h3 ng-bind="item.name">123</h3>
  * </treemenu>
  */
@@ -14,9 +16,6 @@ treemenu.$inject = ['$compile'];
 export function treemenu($compile) {
     return {
         strict: 'E',
-        scope: {
-            item: '=',
-        },
         compile: (tElement, tAttr, transcludeFn) => {
 
             // 获取模板内容（未编译的，用于递归子集）

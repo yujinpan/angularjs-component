@@ -90,6 +90,9 @@ class AppController {
         }, {
             name: 'home3'
         }];
+        this.treemenuChange = (item) => {
+            alert(item.name);
+        };
     }
 
     save(val) {
@@ -122,7 +125,7 @@ export const app = {
         <h4>3. treemenu</h4>
         <div class="treemenu-example">
             <treemenu class="treemenu-content" item="item" ng-repeat="item in app.treemenuData">
-                <h4 ng-bind="item.name"></h4>
+                <h4 ng-click="app.treemenuChange(item)" ng-bind="item.name"></h4>
             </treemenu>
         </div>
     `

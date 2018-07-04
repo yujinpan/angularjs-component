@@ -1,8 +1,9 @@
 # AngularJS components
-> more components.
+> more self components.
 
  - ios btnswitch
  - dragsort
+ - treemenu
  - ...
 
 # Start

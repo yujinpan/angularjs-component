@@ -1,5 +1,5 @@
 class AppController {
-    constructor() {
+    constructor($scope) {
         // title
         this.appName = 'Conponents List';
 
@@ -15,22 +15,51 @@ class AppController {
         /**
          * dragsort example
          */
-        this.sortList = [
-            { name: 0 },
-            { name: 1 },
-            { name: 2 },
-            { name: 3 },
-            { name: 4 },
-            { name: 5 },
-            { name: 6 },
-            { name: 7 },
-            { name: 8 },
-            { name: 9 },
-            { name: 10 },
-            { name: 11 },
-            { name: 12 },
-            { name: 13 },
-            { name: 14 },
+        this.sortList = [{
+                name: 0
+            },
+            {
+                name: 1
+            },
+            {
+                name: 2
+            },
+            {
+                name: 3
+            },
+            {
+                name: 4
+            },
+            {
+                name: 5
+            },
+            {
+                name: 6
+            },
+            {
+                name: 7
+            },
+            {
+                name: 8
+            },
+            {
+                name: 9
+            },
+            {
+                name: 10
+            },
+            {
+                name: 11
+            },
+            {
+                name: 12
+            },
+            {
+                name: 13
+            },
+            {
+                name: 14
+            },
         ];
         this.sortNumber = (result = this.sortList) => {
             this.sortNumberStr = result.reduce((pre, cur, index) => {
@@ -38,6 +67,31 @@ class AppController {
             });
         };
         this.sortNumber(this.sortList);
+
+        /**
+         * treemenu example
+         * 
+         * 目前限制为data名
+         */
+        $scope.data = [{
+            name: 'home',
+            children: [{
+                    name: 'home-child1'
+                },
+                {
+                    name: 'home-child2',
+                    children: [{
+                        name: 'child2-child2'
+                    }, {
+                        name: 'child2-child2'
+                    }]
+                },
+            ],
+        }, {
+            name: 'home2',
+        }, {
+            name: 'home3'
+        }];
     }
 
     save(val) {
@@ -66,5 +120,12 @@ export const app = {
             <dragsort data="app.sortList" onchange="app.sortNumber(result)"></dragsort>
         </div>
         <button class="btn btn-default" ng-click="app.sortList.push({name: 'new'});app.sortNumber();">add</button>
+
+        <h4>3. treemenu</h4>
+        <div class="treemenu-example">
+            <treemenu class="treemenu-content" item="item" ng-repeat="item in data">
+                <h4 ng-bind="item.name"></h4>
+            </treemenu>
+        </div>
     `
 };

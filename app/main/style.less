@@ -12,16 +12,29 @@ body {
 }
 
 app {
+    width: 500px;
+    margin: 0 auto;
     display: block;
     overflow: hidden;
+    text-align: left;
+    >h1 {
+        text-align: center;
+    }
     h4 {
+        color: #333;
         &>span {
-            color: #333;
             font-size: 14px;
         }
     }
 }
-.drag-list-example {
-    width: 500px;
-    margin: 0 auto;
+
+.treemenu-example {
+    .treemenu-content {
+        display: block;
+        padding-left: 20px;
+        >h4 {
+            color: #666;
+            border-bottom: 1px solid #ddd;
+        }
+    }
 }

@@ -70,10 +70,8 @@ class AppController {
 
         /**
          * treemenu example
-         * 
-         * 目前限制为data名
          */
-        $scope.data = [{
+        this.treemenuData = [{
             name: 'home',
             children: [{
                     name: 'home-child1'
@@ -123,7 +121,7 @@ export const app = {
 
         <h4>3. treemenu</h4>
         <div class="treemenu-example">
-            <treemenu class="treemenu-content" item="item" ng-repeat="item in data">
+            <treemenu class="treemenu-content" item="item" ng-repeat="item in app.treemenuData">
                 <h4 ng-bind="item.name"></h4>
             </treemenu>
         </div>

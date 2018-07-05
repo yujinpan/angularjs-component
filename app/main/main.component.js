@@ -38,28 +38,7 @@ class AppController {
             },
             {
                 name: 7
-            },
-            {
-                name: 8
-            },
-            {
-                name: 9
-            },
-            {
-                name: 10
-            },
-            {
-                name: 11
-            },
-            {
-                name: 12
-            },
-            {
-                name: 13
-            },
-            {
-                name: 14
-            },
+            }
         ];
         this.sortNumber = (result = this.sortList) => {
             this.sortNumberStr = result.reduce((pre, cur, index) => {

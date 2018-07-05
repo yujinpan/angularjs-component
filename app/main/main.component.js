@@ -95,7 +95,6 @@ export const app = {
 
         <h4>2. dragsort
             <span>(sort: {{app.sortNumberStr}})</span>.
-            <button textcopy="app.sortNumberStr">复制</button>
         </h4>
         <div class="drag-list-example">
             <dragsort data="app.sortList" onchange="app.sortNumber(result)"></dragsort>
@@ -108,5 +107,9 @@ export const app = {
                 <h4 ng-click="app.treemenuChange(item)" ng-bind="item.name"></h4>
             </treemenu>
         </div>
+
+        <h4>4. textcopy</h4>
+        <input ng-model="textcopy">
+        <button textcopy="textcopy">复制</button>
     `
 };

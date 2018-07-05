@@ -4,6 +4,7 @@
  - ios btnswitch
  - dragsort
  - treemenu
+ - textcopy
  - ...
 
 # Start

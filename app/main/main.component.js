@@ -95,6 +95,7 @@ export const app = {
 
         <h4>2. dragsort
             <span>(sort: {{app.sortNumberStr}})</span>.
+            <button textcopy="app.sortNumberStr">复制</button>
         </h4>
         <div class="drag-list-example">
             <dragsort data="app.sortList" onchange="app.sortNumber(result)"></dragsort>

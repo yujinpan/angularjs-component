@@ -72,6 +72,20 @@ class AppController {
         this.treemenuChange = (item) => {
             alert(item.name);
         };
+
+        /**
+         * preview_menu
+         */
+        this.previewMenu = {
+            data: [
+                { id: 1, name: 'home' },
+                { id: 2, name: 'home2' },
+                { id: 3, name: 'home3' },
+            ],
+            select: function(result) {
+                alert(result.name);
+            }
+        };
     }
 
     save(val) {
@@ -111,5 +125,8 @@ export const app = {
         <h4>4. textcopy</h4>
         <input ng-model="textcopy">
         <button textcopy="textcopy">复制</button>
+
+        <h4>5. previewMenu</h4>
+        <button preview-menu placement="top" data="app.previewMenu.data" onselect="app.previewMenu.select(result)">点击查看</button>
     `
 };

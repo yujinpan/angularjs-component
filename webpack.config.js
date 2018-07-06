@@ -22,7 +22,7 @@ module.exports = (function webpackConfig() {
 
     // 入口文件
     config.entry = {
-        vendor: ['angular', '@uirouter/angularjs', 'zepto-webpack'],
+        vendor: ['jquery', 'angular', '@uirouter/angularjs'],
         app: __dirname + '/app/bootstrap/bootstrap.js'
     };
 
@@ -43,17 +43,15 @@ module.exports = (function webpackConfig() {
                 exclude: /node_modules/,
                 use: appCss.extract({
                     fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader', 
-                            // 启用css压缩
-                            options: {
-                                minimize: true
-                            }
-                        },{
-                            loader: 'less-loader'
+                    use: [{
+                        loader: 'css-loader',
+                        // 启用css压缩
+                        options: {
+                            minimize: true
                         }
-                    ]
+                    }, {
+                        loader: 'less-loader'
+                    }]
                 })
             },
             {
@@ -61,15 +59,13 @@ module.exports = (function webpackConfig() {
                 include: /node_modules/,
                 use: externalCss.extract({
                     fallback: 'style-loader',
-                    use: [
-                        {
-                            loader: 'css-loader', 
-                            // 启用css压缩
-                            options: {
-                                minimize: true
-                            }
+                    use: [{
+                        loader: 'css-loader',
+                        // 启用css压缩
+                        options: {
+                            minimize: true
                         }
-                    ]
+                    }]
                 })
             },
             // 文件loader
@@ -82,6 +78,18 @@ module.exports = (function webpackConfig() {
                         name: '[hash:6].[ext]'
                     }
                 }]
+            },
+            {
+                test: require.resolve('jquery'),
+                use: [{
+                        loader: 'expose-loader',
+                        options: 'jQuery'
+                    },
+                    {
+                        loader: 'expose-loader',
+                        options: '$'
+                    }
+                ]
             }
         ]
     };
@@ -107,7 +115,7 @@ module.exports = (function webpackConfig() {
     if (mode === 'development') {
 
         config.devtool = 'inline-source-map';
-        
+
         // 开发环境服务器配置
         config.devServer = {
             // 服务器文件路径

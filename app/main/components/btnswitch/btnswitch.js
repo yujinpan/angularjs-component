@@ -1,4 +1,4 @@
-import './btnswitch.component.less';
+import './btnswitch.less';
 
 class BtnSwitchController {
     constructor() {

@@ -2,8 +2,7 @@
  * 用于复制文本
  * 
  * @example
- * 1.引入'/assets/cloud/ui/text_copy/text_copy.js'
- * 2.<div text-copy="{{text}}"></div>
+ * <div text-copy="{{text}}"></div>
  */
 textcopy.$inject = ['$compile'];
 export function textcopy($compile) {

@@ -1,7 +1,7 @@
 /**
  * 用于多行列表拖动排序。
  */
-import './dragsort.directive.less';
+import './dragsort.less';
 import angular from 'angular';
 
 dragsort.$inject = ['$timeout'];
